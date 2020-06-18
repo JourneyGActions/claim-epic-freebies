@@ -5,8 +5,8 @@ on: # When to run this workflow
 
 # Uncomment the below lines to enable manual trigger.
 
-#    watch:
-#        types: [started] # When repo owner stars this repo
+    watch:
+        types: [started] # When repo owner stars this repo
 
     schedule:
         - cron: "0 0 * * *" # Everyday at 00:00 UTC
@@ -21,13 +21,13 @@ jobs:
             - name: Setup repo
               uses: actions/checkout@v2
               with:
-                  repository: "Revadike/epicgames-freebies-claimer"
+                  repository: "JourneyGActions/epicgames-freebies-claimer"
 
             - name: Setup Node.js
               uses: actions/setup-node@v1
 
             - name: Install dependencies
-              run: yarn
+              run: npm Install
 
             - name: Get Epic Freebies
-              run: yarn start ${{ secrets.USERNAME }} ${{ secrets.PASSWORD }} 0 ${{ secrets.SECRETKEY }}
+              run: npm run start ${{ secrets.USERNAME }} ${{ secrets.PASSWORD }} 0 ${{ secrets.SECRETKEY }}
