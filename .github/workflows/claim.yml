@@ -29,5 +29,8 @@ jobs:
             - name: Install dependencies
               run: yarn
 
+            - name: Fix Epicgames Client Bug
+              run: mkdir -p .egstore
+
             - name: Get Epic Freebies
               run: yarn start ${{ secrets.USERNAME }} ${{ secrets.PASSWORD }} 0 ${{ secrets.SECRETKEY }}
