@@ -21,8 +21,8 @@ jobs:
             - name: Setup repo
               uses: actions/checkout@v2
               with:
-                  repository: "Revadike/epicgames-freebies-claimer"
-                  ref: "puppeteer"
+                  repository: "JourneyGActions/epicgames-freebies-claimer"
+
 
             - name: Setup Node.js
               uses: actions/setup-node@v1
