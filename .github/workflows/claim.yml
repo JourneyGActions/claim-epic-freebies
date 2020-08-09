@@ -1,37 +1,37 @@
-name: Claim Free Games
+#name: Claim Free Games
 
-on: # When to run this workflow
-    push: # When you edit this repo
+#on: # When to run this workflow
+#    push: # When you edit this repo
 
 # Uncomment the below lines to enable manual trigger.
 
-    watch:
-        types: [started] # When repo owner stars this repo
+#    watch:
+#        types: [started] # When repo owner stars this repo
 
-    schedule:
-        - cron: "0 0 * * *" # Everyday at 00:00 UTC
+#    schedule:
+#        - cron: "0 0 * * *" # Everyday at 00:00 UTC
 
-jobs:
-    claim:
-        runs-on: ubuntu-latest
+#jobs:
+#    claim:
+#        runs-on: ubuntu-latest
 
-        timeout-minutes: 5 # Automatically stop after 5 minutes
+#        timeout-minutes: 5 # Automatically stop after 5 minutes
 
-        steps:
-            - name: Setup repo
-              uses: actions/checkout@v2
-              with:
-                  repository: "JourneyGActions/epicgames-freebies-claimer"
+#        steps:
+#            - name: Setup repo
+#              uses: actions/checkout@v2
+#              with:
+#                  repository: "JourneyGActions/epicgames-freebies-claimer"
 
 
-            - name: Setup Node.js
-              uses: actions/setup-node@v1
+#            - name: Setup Node.js
+#              uses: actions/setup-node@v1
 
-            - name: Install dependencies
-              run: yarn
+#            - name: Install dependencies
+#              run: yarn
 
-            - name: Fix Epicgames Client Bug
-              run: mkdir -p .egstore
+#            - name: Fix Epicgames Client Bug
+#              run: mkdir -p .egstore
 
-            - name: Get Epic Freebies
-              run: yarn start ${{ secrets.USERNAME }} ${{ secrets.PASSWORD }} 0 ${{ secrets.SECRETKEY }}
+#            - name: Get Epic Freebies
+#              run: yarn start ${{ secrets.USERNAME }} ${{ secrets.PASSWORD }} 0 ${{ secrets.SECRETKEY }}
